@@ -255,21 +255,21 @@ class UserProfile:
     target_energy: float
     likes_acoustic: bool
 
-class Recommender:
-    """
-    OOP implementation of the recommendation logic.
-    Required by tests/test_recommender.py
-    """
-    def __init__(self, songs: List[Song]):
-        self.songs = songs
+# class Recommender:
+#     """
+#     OOP implementation of the recommendation logic.
+#     Required by tests/test_recommender.py
+#     """
+#     def __init__(self, songs: List[Song]):
+#         self.songs = songs
 
-    def recommend(self, user: UserProfile, k: int = 5) -> List[Song]:
-        # TODO: Implement recommendation logic
-        return self.songs[:k]
+#     def recommend(self, user: UserProfile, k: int = 5) -> List[Song]:
+#         # TODO: Implement recommendation logic
+#         return self.songs[:k]
 
-    def explain_recommendation(self, user: UserProfile, song: Song) -> str:
-        # TODO: Implement explanation logic
-        return "Explanation placeholder"
+#     def explain_recommendation(self, user: UserProfile, song: Song) -> str:
+#         # TODO: Implement explanation logic
+#         return "Explanation placeholder"
 
 def load_songs(csv_path: str) -> List[Dict]:
     """

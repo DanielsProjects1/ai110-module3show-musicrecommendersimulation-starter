@@ -107,6 +107,10 @@ Write 1 to 2 paragraphs here about what you learned:
 - about how recommenders turn data into predictions
 - about where bias or unfairness could show up in systems like this
 
+The biggest thing I learned is that a recommender isn't really "smart" — it's just math applied to assumptions. Every feature gets a number, every number gets compared to a target, and the song with the smallest total gap wins. What makes it feel intelligent is that when the assumptions are reasonable and the data is representative, the output looks like genuine taste-matching. But once you stress-test it — like asking for high energy and sad mood at the same time, or setting all weights to zero — you see that the system has no actual understanding of music. It's pattern-matching against whatever structure you gave it, and if that structure is wrong or incomplete, it fails silently and confidently.
+
+The bias stuff was the more surprising part. Going in I expected bias to mean something obvious, like the system explicitly favoring one group. What I actually found is that most of it is invisible and structural. A user who writes "indie" instead of "indie pop" loses 20% of their score with no warning. A user who likes jazz gets one real candidate in the whole catalog while a lofi fan gets three, so their recommendations are just worse by default. The tempo formula quietly assumes no one listens to music outside 60–180 BPM, which rules out entire global genres. None of that is intentional — it's just that every design decision (what labels to use, how many songs per genre to include, what BPM range to normalize against) quietly encodes assumptions about whose taste is "normal." The system treats everyone the same mathematically, but the people whose taste matches those hidden assumptions get noticeably better results.
+
 
 ---
 
@@ -214,4 +218,12 @@ A few sentences about what you learned:
 - What surprised you about how your system behaved
 - How did building this change how you think about real music recommenders
 - Where do you think human judgment still matters, even if the model seems "smart"
+
+Default Output
+![Music Recommender Default output 1](<Music Recommender Default output 1.png>)
+![Music Recommender Default output 2](<Music Recommender Default output 2.png>)
+
+Phase 4 Pictures
+![Pic 1](<Phase 4 pic 1.png>) ![Pic 2](<Phase 4 pic 2.png>) ![Pic 3](<Phase 4 pic 3.png>)![Pic 4](<phase 4 pic 4.png>) 
+
 
