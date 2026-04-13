@@ -31,6 +31,12 @@ You can include a simple diagram or bullet list if helpful.
 
 ---
 
+In my system, each song will use the following features: energy, valence, genre, mood, danceability, tempo_bpm, and acousticness.
+
+My `Recommender` will computer the score of each song by taking each the abosulte value of each rating of each attribute of the song minus the users preferred rating for that attribute, and subtracting that value from 1 to get the songs score for that attribute. This way, the closer the song's attribute is rating wise to the user's preferred attribute rating, the higher a score it will receive for that rating. then we take the scores for all those attributes and divide multiply each of them by a weight based on how important that attribute is to the user, and then take the average score of all these attributes and assign that to the overall score.
+
+We will use this score to determine which songs get recommended to the user.
+
 ## Getting Started
 
 ### Setup
